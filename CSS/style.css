@@ -1,0 +1,271 @@
+@charset "UTF-8";
+/**GLOBAL*/
+html {
+  font-size: 62.5%;
+  /* truquito para así poder hacer 1 rem igual a 10 pixel*/
+  box-sizing: border-box;
+  /* hack para box model*/
+  scroll-snap-type: y mandatory;
+  /* para activar el efecto de scroll y es de arriba a bajo*/
+}
+
+.servicios,
+.navegacion-principal,
+.formulario {
+  /* que se pare en cada seccion el scroll*/
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* sirve para arreglar el padding sumado* URL en favoritos*/
+body {
+  font-size: 1.6rem;
+  background-image: linear-gradient(to top, #dfe9f3 0%, #ffffff 100%);
+  /* gardient linear es para asi hacer un degradado*/
+  font-family: "Krub", sans-serif;
+}
+
+h1 {
+  font-size: 3.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+.boton {
+  background-color: #0097a7;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  /*Arriba abajo y derecha izquierda*/
+  font-size: 2rem;
+  margin-top: 5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  width: 95%;
+  text-align: center;
+  border: none;
+}
+
+.boton:hover {
+  cursor: pointer;
+  background-color: #ffc107;
+}
+
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.43);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/*este html y body hacen que 1 rem equivalga a 10 px, 10 rem 100 px 3.8 rem son 38 px etc*/
+/* si colocamos .parrafo p (se seleccionan TODOS los parrafos de dentro de la clase), en caso de colocar .parrafo > p (SOLO cogerá los párrafos de primer nivel)*/
+span {
+  font-size: 2rem;
+}
+
+/*las .clases se pueden repetir pero los #ID no */
+/*la especificidad de CSS implica que cuanto más concreto sea el class, más probabilidad hay que lo aplique*/
+.contenedor {
+  max-width: 120rem;
+  /*normalemnte es eñ standar*/
+  margin: 0 auto 0 auto;
+  /*agujas del reloj arriba derecha abajo izquierda*/
+}
+
+.nav-bg {
+  background-color: #0097a7;
+}
+
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+  /*si añado align items me permite personalizar el contenido de dentro del cuadro*/
+}
+.navegacion-principal a {
+  text-align: center;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  /*es igual que negrita*/
+}
+.navegacion-principal a:hover {
+  /* visited es para que se vea algo despued de ser visitado*/
+  background-color: #ffc107;
+  color: #212121;
+}
+
+/*display block quiere decir que el contenido se coloca UNO DEBAJO DEL OTRO SOMANDO TODO SU ESPACIO*/
+/*display inline se colocara los div uno al lado del otro*/
+/*primer banner*/
+.hero {
+  background-image: url(../IMG/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* con el cover la imagen se adapta a la pantalla*/
+  height: 45rem;
+  background-position: center;
+  position: relative;
+}
+
+.contenido-hero {
+  position: absolute;
+  /* posicion absoluta para poder colocar un recuadro negro delante, el recuadro lo extendemos al 100
+  % y así podems retocarlo con la opacidad y crear un recuadro negro transparente*/
+  background-color: rgba(0, 0, 0, 0.6);
+  /* el 0.6 es la opacidad*/
+  width: 100%;
+  height: 100%;
+  /*background-color: black;
+  width: 100%;
+  height: 100%;* Para saber como funciona la posicion absoluta y relativa La relativa va en el padre y la absoluta va en el elemento que quieres mover. A partir de ahí se utiliza el top left bottom right para asi poder moverlo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*esta practica es para alinear vertical y horizonatlalmente al centro*/
+}
+.contenido-hero h2,
+.contenido-hero p {
+  color: #ffffff;
+}
+.contenido-hero h2 {
+  text-align: center;
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+/*contenido main*/
+.contenido-main {
+  margin-top: 1rem;
+}
+
+.section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section p {
+  line-height: 2;
+  text-align: left;
+}
+.section h3 {
+  color: #0097a7;
+  font-weight: 400;
+}
+
+.iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: #ffc107;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*formulario*/
+.formulario {
+  background-color: #757575;
+  /*width: 60%;
+  margin: auto; Esto es lo que yo haría*/
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  /* para centrarlo horizontalmente elemento tipo block.*/
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffc107;
+}
+.formulario fieldset {
+  border: none;
+}
+
+/*footer*/
+.campo {
+  margin-bottom: 0.5rem;
+}
+.campo label {
+  display: block;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 1rem 0rem;
+}
+.campo input,
+.campo textarea {
+  width: 100%;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.boton-enviar {
+  text-align: center;
+}
+
+.derechos {
+  text-align: center;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .boton {
+    width: auto;
+  }
+
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* son fracciones es lo mismo que 33.3 % entre tres +  repeat es para 1fr 1fr 1fr*/
+    column-gap: 4rem;
+    /*NOTA: Usar flex box por ejemplo con cajas de nav y grid con la disctribucion de varios elementos. AMBOS SON VALIDOS pero mejor distribuir elementos con flex pero grid con layouts ç. nunca usar floats*/
+  }
+
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    grid-template-rows: minmax(1fr 1fr 1fr);
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+    grid-column: 1/3;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
